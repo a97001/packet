@@ -166,7 +166,7 @@ function Parser (definition) {
     skipping    = null;
     terminated = ! field.terminator;
     terminator = field.terminator && field.terminator[field.terminator.length - 1];
-    named = named || field.named;
+    named = named || field.named || field.packing ? true : false;
     if (field.arrayed && field.endianness  != "x") arrayed = [];
   }
 
